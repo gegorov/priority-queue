@@ -1,6 +1,6 @@
 const Node = require('../src/node');
 const MaxHeap = require('../src/max-heap');
-
+/* eslint-disable */
 describe('MaxHeap', () => {
 	describe('#constructor', () => {
 		const h = new MaxHeap();

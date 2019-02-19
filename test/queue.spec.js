@@ -1,6 +1,6 @@
 const Queue = require('../src/queue');
 const MaxHeap = require('../src/max-heap');
-
+/* eslint-disable */
 describe('PriorityQueue', () => {
 	describe('#constructor', () => {
 		it('assings passed maxSize or set it to default value 30', () => {

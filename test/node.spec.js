@@ -1,5 +1,5 @@
 const Node = require('../src/node');
-
+/* eslint-disable */
 describe('Node', () => {
 	describe('#constructor', () => {
 		const node = new Node(42, 15);
