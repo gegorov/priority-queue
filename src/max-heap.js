@@ -14,17 +14,16 @@ class MaxHeap {
     this.shiftNodeUp(myNode);
   }
 
-  pop() {
-    if (!this.isEmpty()) {
-      const detached = this.detachRoot();
-      if (this.currentSize > 1) {
-        this.restoreRootFromLastInsertedNode(detached);
-        this.shiftNodeDown(this.root);
-      } else {
-        this.restoreRootFromLastInsertedNode({});
-      }
+  pop() { // eslint-disable-line
+    if (this.root) {
       this.heapSize -= 1;
-      return detached.data;
+      const { data } = this.root;
+      const detached = this.detachRoot();
+      this.restoreRootFromLastInsertedNode(detached);
+      if (this.root) {
+        this.shiftNodeDown(this.root);
+      }
+      return data;
     }
   }
 
@@ -77,7 +76,7 @@ class MaxHeap {
   clear() {
     this.root = null;
     this.parentNodes = [];
-    this.size = 0;
+    this.heapSize = 0;
   }
 
   insertNode(node) {
